@@ -22,9 +22,11 @@ def main():
                 return
         
         
+        player.update(dt)
         screen.fill("black") # Setting background colour to black
         player.draw(screen) # re-render the player each frame
         pygame.display.flip() # Refreshing display
+        
         dt = game_clock.tick(60) / 1000 # limit fps to 60
 
 
