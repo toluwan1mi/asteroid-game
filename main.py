@@ -35,6 +35,11 @@ def main():
         
         
         updatable.update(dt)
+
+        for obj in asteroid:
+            if obj.detect_collision(player):
+                print("Game over!")
+                return False
         
         screen.fill("black") # Setting background colour to black
         
