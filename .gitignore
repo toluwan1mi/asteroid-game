@@ -10,7 +10,7 @@ wheels/
 .venv
 
 # Personally Added
-*.ropeproject
-*.python-version
-*pyproject.toml
-*uv.lock
+./.ropeproject
+./.python-version
+./pyproject.toml
+./uv.lock
