@@ -10,8 +10,12 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     game_clock = pygame.time.Clock()
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    Player.containers = (updatable, drawable)
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     dt = 0
+
 
     # Game Loop
     while True:
@@ -22,9 +26,13 @@ def main():
                 return
         
         
-        player.update(dt)
+        updatable.update(dt)
+        
         screen.fill("black") # Setting background colour to black
-        player.draw(screen) # re-render the player each frame
+        
+        for obj in drawable:
+            obj.draw(screen) # re-render the player each frame
+        
         pygame.display.flip() # Refreshing display
         
         dt = game_clock.tick(60) / 1000 # limit fps to 60
