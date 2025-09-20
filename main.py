@@ -50,7 +50,7 @@ def main():
             for shot in shots:
                 if obj.detect_collision(shot):
                     shot.kill()
-                    obj.kill()
+                    obj.split()
             
         
         screen.fill("black") # Setting background colour to black
