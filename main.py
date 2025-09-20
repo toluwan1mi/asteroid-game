@@ -21,7 +21,7 @@ def main():
         
         screen.fill("black") # Setting background colour to black
         pygame.display.flip() # Refreshing display
-        dt = game_clock.tick(60) / 1000
+        dt = game_clock.tick(60) / 1000 # limit fps to 60
 
 
 if __name__ == "__main__":
